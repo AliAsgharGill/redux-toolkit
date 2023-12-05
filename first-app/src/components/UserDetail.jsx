@@ -1,7 +1,14 @@
 import DeleteAllUser from "./DeleteAllUser";
-
+import { fakeUserData } from "../api";
+import { useDispatch } from "react-redux";
+import { addUser } from "./store/slices/UserSlice";
+import DisplayUsers from "./DisplayUsers";
 const UserDetail = () => {
-  const addNewUser = () => {};
+  const dispatch = useDispatch();
+  const addNewUser = (payload) => {
+    console.log(payload);
+    dispatch(addUser(payload));
+  };
   return (
     <>
       <div className="">
@@ -9,12 +16,14 @@ const UserDetail = () => {
           <div className="admin-subtitiel">List of User Details</div>
           <button
             className="bg-red-600  rounded-lg p-2 font-bold text-white text-md"
-            onClick={() => addNewUser()}
+            onClick={() => addNewUser(fakeUserData())}
           >
             Add New User
           </button>
         </div>
-        <ul></ul>
+        <ul>
+          <DisplayUsers />
+        </ul>
         <hr />
         <DeleteAllUser />
       </div>

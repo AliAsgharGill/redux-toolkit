@@ -8,10 +8,12 @@ const userSlice = createSlice({
       state.push(action.payload);
     },
     removeUser(state, action) {
-      console.log(state, action);
+      // console.log("hi", action.payload);
+      state.splice(action.payload, 1);
     },
-    deleteUsers(state, action) {
-      console.log(state, action);
+    deleteUsers(state) {
+      state.splice(0, state.length);
+      // console.log(state, action);
     },
   },
 });

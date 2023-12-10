@@ -6,14 +6,16 @@ import DisplayUsers from "./DisplayUsers";
 const UserDetail = () => {
   const dispatch = useDispatch();
   const addNewUser = (payload) => {
-    console.log(payload);
+    // console.log(payload);
     dispatch(addUser(payload));
   };
   return (
     <>
       <div className="">
-        <div className="admin-table">
-          <div className="admin-subtitiel">List of User Details</div>
+        <div className="">
+          <div className="text-center font-bold text-4xl p-3  ">
+            List of User Details
+          </div>
           <button
             className="bg-red-600  rounded-lg p-2 font-bold text-white text-md"
             onClick={() => addNewUser(fakeUserData())}

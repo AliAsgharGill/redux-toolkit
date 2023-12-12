@@ -13,10 +13,10 @@ const DisplayUsers = () => {
 
   return data.map((user, id) => {
     return (
-      <li key={id} className="font-bold w-[400px] ">
-        {user}
-        <button onClick={() => deleteUser(id)} className="fixed w-[400px]">
-          <MdDeleteForever className="fill-red-600 h-[500] w-32 item-center flex " />
+      <li key={id} className="font-bold  flex items-center justify-left ">
+        <p className="">{user}</p>
+        <button onClick={() => deleteUser(id)} className="">
+          <MdDeleteForever className="fill-red-600 " />
         </button>
         <hr />
       </li>
